@@ -40,9 +40,9 @@ female it will return the value for the next function
 def get_metric():
     """
     This function will be utilizing values for calculations using the metric
-    system. The values centimeters for height and kilograms for weight. the values
-    are compiled to determine BMR for either male or female. It will break down the
-    values to what is needed daily
+    system. The values centimeters for height and kilograms for weight. the 
+    values are compiled to determine BMR for either male or female. It will 
+    break down the values to what is needed daily
     """
     print("\n\nBefore we continue I need to know if you are a male or female.")
     print("I utilize the Harris-Benedict BMR formula for my calculations.\n")
@@ -54,24 +54,27 @@ def get_metric():
     male = "x"
     female = "y"
     if sex == male:
-        # Your basal metabolism rate is produced through the following basal metabolic rate formula:
-        # https://www.garnethealth.org/
-        height = float(input("What is your height in cm? "))  # I have converted height into a float to utilize decimal
+        # Your basal metabolism rate is produced through the following basal 
+        # metabolic rate formula: https://www.garnethealth.org/
+        height = float(input("What is your height in cm? "))
         weight = float(input("What is your weight in kg? "))
-        bmr_male = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age)
-        print("As a male to maintain your current weight you need: ", format(bmr_male * 7, '.2f'), "calories weekly")
+        bmr_male = 88.362 + (13.397 * weight) + (4.799 * height) - (
+                    5.677 * age)
+        print("As a male to maintain your current weight you need: ",
+              format(bmr_male * 7, '.2f'), "calories weekly")
         weekly_m_bmr = bmr_male * 7
         calories = int(3500)
         print("There are 3500 calories in a lb")
         cal_def = (weekly_m_bmr - calories) / 7
         print("To lose 1 lb a week: ", format(cal_def, '.2f'), "daily.")
     if sex == female:
-        height = float(input("What is your height in cm? "))  # I have converted height into a float to utilize decimal
+        height = float(input("What is your height in cm? "))
         weight = float(input("What is your weight in kg? "))
-        bmr_female = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age)
+        bmr_female = 447.593 + (9.247 * weight) + (3.098 * height) - (
+                    4.330 * age)
         print("Female BMR: ", format(bmr_female, '.2f'))
-        print("As a female to maintain your current weight you need: ", format(bmr_female * 7, '.2f'),
-              "calories weekly")
+        print("As a female to maintain your current weight you need: ",
+              format(bmr_female * 7, '.2f'), "calories weekly")
         weekly_f_bmr = bmr_female * 7
         calories = int(3500)
         print("There are 3500 calories in a lb")
@@ -83,8 +86,8 @@ def get_imperial():
     """
     This function will be utilizing values for calculations using the imperial
     system. The values; inches for height and pounds for weight. The values
-    are compiled to determine BMR for either male or female. It will break down the
-    values to what is needed daily
+    are compiled to determine BMR for either male or female. It will break down
+    the value to what is needed daily
     """
     print("\n\nBefore we continue I need to know if you are a male or female.")
     print("I utilize the Harris-Benedict BMR formula for my calculations.\n")
@@ -96,27 +99,27 @@ def get_imperial():
     male = "x"
     female = "y"
     if sex == male:
-        # Your basal metabolism rate is produced through the following basal metabolic rate formula:
-        # https://www.garnethealth.org/
+        # Your basal metabolism rate is produced through the following basal 
+        # metabolic rate formula: https://www.garnethealth.org/
         height = float(
-            input("What is your height in inches? "))  # I have converted height into a float to utilize decimal
+            input("What is your height in inches? "))
         weight = float(input("What is your weight in lbs? "))
-        bmr_male = 66 + (6.23 * weight) + (12.7 * height) - (6.8 * age)  # this is Harris-Benedict formula for BMR
+        bmr_male = 66 + (6.23 * weight) + (12.7 * height) - (6.8 * age)
         print("Male BMR: ", format(bmr_male, '.2f'))
-        print("As a male to maintain your current weight you need: ", format(bmr_male * 7, '.2f'), "calories weekly")
+        print("As a male to maintain your current weight you need: ",
+              format(bmr_male * 7, '.2f'), "calories weekly")
         weekly_m_bmr = bmr_male * 7
         calories = int(3500)
         print("There are 3500 calories in a lb")
         cal_def = (weekly_m_bmr - calories) / 7
         print("To lose 1 lb a week: ", format(cal_def, '.2f'), "daily.")
     if sex == female:
-        height = float(
-            input("What is your height in inches? "))  # I have converted height into a float to utilize decimal
+        height = float(input("What is your height in inches? "))
         weight = float(input("What is your weight in lbs? "))
         bmr_female = 655 + (4.35 * weight) + (4.7 * height) - (4.7 * age)
         print("Female BMR: ", format(bmr_female, '.2f'))
-        print("As a female to maintain your current weight you need: ", format(bmr_female * 7, '.2f'),
-              "calories weekly")
+        print("As a female to maintain your current weight you need: ",
+              format(bmr_female * 7, '.2f'), "calories weekly")
         weekly_f_bmr = bmr_female * 7
         calories = int(3500)
         print("There are 3500 calories in a lb")
