@@ -1,8 +1,24 @@
-# Fausto Beato
-# Date 04/15/2022 (Last updated)
-# Description: This programs offers a weight loss plan
+""" The is in integration project designed to test
+calculate the BMR needed for weight loss. It will request
+and return values needed for calculations. It gives the
+possibility to use either imperial or metric system for
+calculation. There is still much I want to add. When time
+also I will rewrite and create a program that operates
+more efficiently."""
+
+__author__ = "Fausto Beato"
+
 
 def get_sex(sex):
+    """
+Here the function is set to allow the user to decide
+which sex they will be inputting information as. The
+choice is between male and female. The function will
+users input and if it's and x for male or a y for
+female it will return the value for the next function
+    :param sex: variables are used for the proper calculator
+    :return: returning value for requesting function
+    """
     male = "x"
     female = "y"
     known = False
@@ -17,11 +33,17 @@ def get_sex(sex):
                 return female
             else:
                 print("Invalid input. Try again.")
-        except:
+        except ValueError:
             print("Invalid input. Try again.")
 
 
 def get_metric():
+    """
+    This function will be utilizing values for calculations using the metric
+    system. The values centimeters for height and kilograms for weight. the values
+    are compiled to determine BMR for either male or female. It will break down the
+    values to what is needed daily
+    """
     print("\n\nBefore we continue I need to know if you are a male or female.")
     print("I utilize the Harris-Benedict BMR formula for my calculations.\n")
     sex = input("Please choose [x] for male and [y] for female: ")
@@ -58,12 +80,18 @@ def get_metric():
 
 
 def get_imperial():
+    """
+    This function will be utilizing values for calculations using the imperial
+    system. The values; inches for height and pounds for weight. The values
+    are compiled to determine BMR for either male or female. It will break down the
+    values to what is needed daily
+    """
     print("\n\nBefore we continue I need to know if you are a male or female.")
     print("I utilize the Harris-Benedict BMR formula for my calculations.\n")
     sex = input("Please choose [x] for male and [y] for female: ")
     sex = sex.lower()
     get_sex(sex)
-    age = int(input("Annnnd... What's your age? "))
+    age = int(input("Annnd... What's your age? "))
     get_age(age)
     male = "x"
     female = "y"
@@ -97,6 +125,14 @@ def get_imperial():
 
 
 def measure_sys(choice):
+    """
+    Here the function is trying to determine whether to calculate
+    using the metric system or imperial system. The 2 use a different
+    values to determine BMR.
+    :param choice: the 'choice' will be returned to utilize the proper
+    calculator
+    :return: returning the choice
+    """
     metric = "m"
     imperial = "i"
     x = False
@@ -112,11 +148,18 @@ def measure_sys(choice):
                 return metric
             else:
                 print("Invalid input. Try again.")
-        except:
+        except ValueError:
             print("Invalid input. Try again.")
 
 
 def get_age(age):
+    """
+    Getting the users age to utilize for calculations. The age has
+    to be more than 0. Here it will test the values until it has the
+    value necessary to continue.
+    :param age: what is the age of the user
+    :return: the age of the user
+    """
     x = False
     while not x:
         try:
@@ -126,18 +169,28 @@ def get_age(age):
             elif age > 0:
                 print("Thank you, let's continue.")
                 return age
-        except:
+        except ValueError:
             print("Invalid input. Try again.")
 
 
 def get_user():
+    """
+Getting users name and information for a greeting. An attempt at making
+the program feel inviting.
+    """
     first_name = input("Enter your first name: ")
     last_name = input("Enter your last name: ")
     print('\nHello,', first_name, last_name, ', lets lose some weight!')
 
 
 def main():
-
+    """
+Welcomes to the integration. Gets the users name and continues
+to get information for calculations. Within the main function there
+it will decide which measuring system to use and continue until the
+end of the calculations are completed. A disclaimer should be
+presented for the safety of the user.
+    """
     print("Welcome to my integration project.\n")
     get_user()
     print("\nLet's get personal")
@@ -159,4 +212,5 @@ def main():
     print(md)
 
 
-main()
+if __name__ == '__main__':
+    main()
